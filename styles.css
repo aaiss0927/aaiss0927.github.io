@@ -1,0 +1,1689 @@
+/* =====================================================
+   조현준 — Portfolio (Editorial, v2)
+   Printed-portfolio feel: 8px grid, thin-border cards, mono labels, blue only
+   for labels / links / Result.
+
+    1. Tokens          2. Base            3. Layout          4. Header / Nav
+    5. Hero            6. Section head    7. Cards & labels  8. Projects grid
+    9. Project detail 10. Awards         11. How I work     12. Experience
+   13. Education      14. Writing        15. Contact/Footer 16. Utilities
+   17. Dark mode      18. Motion / Print
+   ================================================== */
+
+/* 1. Tokens ---------------------------------------- */
+:root {
+  color-scheme: light;
+
+  /* color */
+  --bg: #F4F3EE;
+  --surface: #FFFFFF;
+  --surface-2: #F4F3EE;      /* KPI boxes inside a white card */
+  --photo-mat: #FFFFFF;      /* mat around the white-background ID photo */
+  --photo-edge: transparent; /* photo edge (dark only) */
+  --border: #E3E1D9;
+  --rule-strong: #C9C7BE;    /* timeline rail */
+  --ink: #141414;
+  --text: #2E2E2B;
+  --muted: #5F5F5A;
+  --blue: #2B4CE0;
+  --nav-bg: rgba(244, 243, 238, 0.86);
+  --selection: #FFFFFF;
+  --photo-filter: none;
+
+  /* type */
+  --sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  /* spacing — 8px grid */
+  --s1: 8px;
+  --s2: 16px;
+  --s3: 24px;
+  --s4: 32px;
+  --s5: 40px;
+  --s6: 48px;
+  --s7: 56px;
+  --s8: 64px;
+  --s9: 72px;
+
+  /* layout */
+  --container: 1120px;
+  --gutter: 16px;
+  --radius: 8px;
+  --header-h: 85px;          /* two-row header on phones (measured) */
+  --section-pad: var(--s6);
+  --card-pad: 20px;
+  --aside-w: 304px;
+  --tl-date-w: 128px;
+  --tl-gap: 40px;
+  --t: 150ms ease;
+}
+
+@media (min-width: 600px) {
+  :root {
+    --header-h: 56px;
+    --gutter: 24px;
+  }
+}
+
+@media (min-width: 768px) {
+  :root {
+    --gutter: 32px;
+    --section-pad: var(--s7);
+    --card-pad: var(--s3);
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --gutter: 40px;
+    --section-pad: var(--s9);
+    --header-h: 64px;
+    --card-pad: var(--s4);
+  }
+}
+
+@media (min-width: 1280px) {
+  :root {
+    --aside-w: 336px;
+  }
+}
+
+/* 2. Base ------------------------------------------ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-h) + var(--s2));
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 400 16px/24px var(--sans);
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+h1, h2, h3, h4, h5 {
+  margin: 0;
+  color: var(--ink);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+p, ul, ol, dl, dd, figure {
+  margin: 0;
+}
+
+ul, ol {
+  padding: 0;
+  list-style: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+}
+
+strong {
+  font-weight: 700;
+  color: var(--ink);
+}
+
+code {
+  font-family: var(--mono);
+  font-size: 0.875em;
+}
+
+:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 2px;
+}
+
+::selection {
+  background: var(--blue);
+  color: var(--selection);
+}
+
+/* 3. Layout ---------------------------------------- */
+.container {
+  width: 100%;
+  max-width: calc(var(--container) + var(--gutter) * 2);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+/* Every section opens with the same gap; content ends on a rule. */
+.section {
+  padding-top: var(--section-pad);
+}
+
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: var(--s2);
+  z-index: 100;
+  padding: var(--s1) var(--s2);
+  background: var(--ink);
+  color: var(--bg);
+  border-radius: var(--radius);
+  font-weight: 600;
+}
+
+.skip-link:focus {
+  top: var(--s1);
+}
+
+/* 4. Header / Nav ---------------------------------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--nav-bg);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+
+/* Phones: brand on row one, all five links on row two — sized to fit 320px
+   (11px mono, 4px gaps), so nothing scrolls or hides. */
+.site-header__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px var(--s2);
+  padding-top: 10px;
+  padding-bottom: 8px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex: none;
+  height: 32px;
+  color: var(--ink);
+  font-weight: 800;
+  font-size: 16px;
+}
+
+.brand:hover {
+  text-decoration: none;
+}
+
+/* Same mark as favicon.svg */
+.brand__mark {
+  display: block;
+  flex: none;
+  width: 24px;
+  height: 24px;
+}
+
+.brand__tile {
+  fill: var(--ink);
+}
+
+.brand__glyph {
+  fill: var(--bg);
+}
+
+.site-nav {
+  flex: 1 1 100%;
+  min-width: 0;
+}
+
+.site-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 4px;
+  padding: 2px 2px;
+}
+
+.site-nav li {
+  display: flex;
+}
+
+/* 40px-tall hit box; negative margins keep the row at 26px. The current
+   indicator (::after) hugs the text, not the hit box. */
+.site-nav a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 0 2px;
+  margin: -7px -2px;
+  font: 500 11px/16px var(--mono);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--muted);
+  transition: color var(--t);
+}
+
+.site-nav a::after {
+  content: "";
+  position: absolute;
+  right: 2px;
+  bottom: 6px;
+  left: 2px;
+  height: 1px;
+  background: transparent;
+  transition: background-color var(--t);
+}
+
+.site-nav a:hover {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.site-nav a[aria-current="location"] {
+  color: var(--blue);
+}
+
+.site-nav a[aria-current="location"]::after {
+  background: var(--blue);
+}
+
+@media (min-width: 360px) {
+  .site-nav ul {
+    gap: var(--s1);
+  }
+
+  .site-nav a {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 600px) {
+  .site-header__inner {
+    flex-wrap: nowrap;
+    height: var(--header-h);
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .site-nav {
+    flex: 0 1 auto;
+  }
+
+  .site-nav ul {
+    flex-wrap: nowrap;
+    gap: clamp(14px, 2.4vw, 28px);
+    padding: 4px 4px; /* room for the -4px margins */
+  }
+
+  .site-nav a {
+    padding: 0 4px;
+    margin: -7px -4px;
+    letter-spacing: 0.08em;
+  }
+
+  .site-nav a::after {
+    right: 4px;
+    left: 4px;
+  }
+}
+
+/* 5. Hero ------------------------------------------ */
+.hero {
+  padding-top: var(--s5);
+}
+
+/* Phones: one column. From 768px the photo spans text + body rows and the
+   table runs container-wide below. */
+.hero__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas:
+    "text"
+    "photo"
+    "body"
+    "meta";
+  row-gap: var(--s3);
+  align-items: start;
+}
+
+.hero__text {
+  grid-area: text;
+  min-width: 0;
+}
+
+.hero__text .label {
+  white-space: normal;
+}
+
+.hero__body {
+  grid-area: body;
+  min-width: 0;
+}
+
+.hero__title {
+  margin-top: var(--s2);
+}
+
+.hero__headline {
+  display: block;
+  font-size: clamp(26px, 2.6vw + 6px, 40px);
+  line-height: 1.25;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+/* The headline wraps only at its comma. */
+.nb {
+  white-space: nowrap;
+}
+
+.hero__name {
+  display: block;
+  margin-top: var(--s1);
+  font-size: clamp(48px, 9vw, 88px);
+  line-height: 1.05;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+}
+
+.hero__intro {
+  max-width: 40em;
+  font-size: 17px;
+  line-height: 26px;
+  color: var(--ink);
+}
+
+/* Phones: 2×2 buttons; wider: one row. */
+.hero__links {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--s1);
+  margin-top: var(--s3);
+}
+
+.hero__links .btn {
+  width: 100%;
+  justify-content: center;
+}
+
+@media (min-width: 480px) {
+  .hero__links {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .hero__links .btn {
+    width: auto;
+  }
+}
+
+/* Now / Interests — ruled table closing the hero, container-wide */
+.hero__meta {
+  grid-area: meta;
+  margin-top: var(--s1);
+  border-top: 1px solid var(--border);
+}
+
+.hero__meta > div {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2px var(--s3);
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+  line-height: 22px;
+  color: var(--ink);
+}
+
+.hero__meta dt {
+  font: 500 12px/22px var(--mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+@media (min-width: 480px) {
+  .hero__meta > div {
+    grid-template-columns: 96px minmax(0, 1fr);
+  }
+}
+
+.hero__photo {
+  grid-area: photo;
+  width: 120px;
+  padding: 6px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--photo-mat);
+  justify-self: start;
+}
+
+.hero__photo img {
+  border-radius: 4px;
+  outline: 1px solid var(--photo-edge);
+  outline-offset: -1px;
+  filter: var(--photo-filter);
+}
+
+/* Decorative Latin name, right-aligned mono. */
+.hero__photo figcaption {
+  padding: 8px 2px 2px;
+  font: 500 11px/14px var(--mono);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-align: end;
+  color: var(--muted);
+}
+
+@media (min-width: 768px) {
+  .hero {
+    padding-top: var(--s7);
+  }
+
+  .hero__grid {
+    grid-template-columns: minmax(0, 1fr) 200px;
+    grid-template-areas:
+      "text photo"
+      "body photo"
+      "meta meta";
+    column-gap: var(--s6);
+  }
+
+  .hero__photo {
+    width: 200px;
+    padding: var(--s1);
+    justify-self: end;
+  }
+
+  .hero__photo figcaption {
+    padding: 10px 4px 2px;
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .hero__title {
+    margin-top: var(--s3);
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero {
+    padding-top: var(--s8);
+  }
+
+  .hero__grid {
+    grid-template-columns: minmax(0, 1fr) 240px;
+    column-gap: var(--s8);
+  }
+
+  .hero__photo {
+    width: 240px;
+  }
+
+  .hero__intro {
+    font-size: 18px;
+    line-height: 28px;
+  }
+}
+
+/* 6. Section head ---------------------------------- */
+.sec-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--s2);
+  padding-bottom: var(--s2);
+  border-bottom: 1px solid var(--ink);
+}
+
+.sec-title {
+  font-size: clamp(26px, 2.6vw, 34px);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+.sec-num {
+  flex: none;
+  padding-bottom: 4px;
+  font: 400 12px/16px var(--mono);
+  letter-spacing: 0.1em;
+  color: var(--muted);
+}
+
+/* Narrow phones: long titles need the whole row. */
+@media (max-width: 479px) {
+  .sec-num {
+    display: none;
+  }
+}
+
+@media (max-width: 359px) {
+  .sec-title {
+    font-size: 24px;
+  }
+}
+
+.sec-deck {
+  margin-top: var(--s2);
+  font-size: 15px;
+  line-height: 24px;
+  color: var(--muted);
+}
+
+/* 7. Cards, labels, badges, buttons ---------------- */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.label {
+  display: inline-block;
+  font: 500 12px/16px var(--mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--blue);
+}
+
+.label--muted {
+  color: var(--muted);
+}
+
+.meta {
+  font: 400 12px/16px var(--mono);
+  letter-spacing: 0.02em;
+  color: var(--muted);
+}
+
+.bar {
+  padding: 0 2px;
+  color: var(--border);
+}
+
+.flow {
+  font: 400 12px/18px var(--mono);
+  color: var(--muted);
+}
+
+.arrow {
+  font-size: 0.85em;
+}
+
+.url {
+  font-family: var(--mono);
+  font-size: 0.875em;
+}
+
+/* Result badge: 1px border, mono, ink. */
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface-2);
+  font: 500 11px/16px var(--mono);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  color: var(--ink);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 40px;
+  padding: 0 var(--s2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color var(--t), background-color var(--t), color var(--t);
+}
+
+.btn:hover {
+  border-color: var(--ink);
+  text-decoration: none;
+}
+
+.btn--primary {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--bg);
+}
+
+.btn--primary:hover {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: var(--bg);
+}
+
+.btn--small {
+  height: 32px;
+  padding: 0 12px;
+  font-size: 13px;
+}
+
+/* Touch: 40px buttons; compact 32px stays for fine pointers. */
+@media (pointer: coarse) {
+  .btn--small {
+    height: 40px;
+    padding: 0 var(--s2);
+  }
+}
+
+/* 8. Projects grid --------------------------------- */
+.project-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--s2);
+  margin-top: var(--s3);
+}
+
+.project {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: var(--card-pad);
+  scroll-margin-top: calc(var(--header-h) + var(--s2));
+  cursor: pointer;
+  transition: border-color var(--t);
+}
+
+.project:hover {
+  border-color: var(--ink);
+}
+
+.project.is-open {
+  border-color: var(--blue);
+}
+
+.project__meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 6px var(--s2);
+}
+
+/* Wrapped tags start at the left edge, not the right. */
+.project__tags {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 10px;
+}
+
+.project__title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.project__icon {
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.project__summary {
+  font-size: 15px;
+  line-height: 24px;
+}
+
+.project__foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: var(--s2);
+  margin-top: auto;
+  padding-top: 4px;
+}
+
+/* 40px hit box, 18px in the layout */
+.project__toggle {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 0 8px;
+  margin: -11px -8px;
+  border: 0;
+  background: none;
+  font: 600 13px/18px var(--sans);
+  color: var(--blue);
+  cursor: pointer;
+}
+
+.project__toggle .when-open,
+.is-open .project__toggle .when-closed {
+  display: none;
+}
+
+.is-open .project__toggle .when-open {
+  display: inline;
+}
+
+@media (min-width: 768px) {
+  .project-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--s3);
+  }
+
+  .project__title {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  .project__icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 9px;
+  }
+
+  /* Cards of a row first, then their full-width detail panels. */
+  .project[data-row="1"] { order: 0; }
+  .project__detail[data-row="1"] { order: 1; }
+  .project[data-row="2"] { order: 2; }
+  .project__detail[data-row="2"] { order: 3; }
+}
+
+/* 9. Project detail -------------------------------- */
+.project__detail {
+  grid-column: 1 / -1;
+  padding: var(--card-pad);
+  border-top-color: var(--blue);
+  scroll-margin-top: calc(var(--header-h) + var(--s2));
+  animation: detail-in 220ms ease;
+}
+
+.project__detail[hidden] {
+  display: none;
+}
+
+@keyframes detail-in {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: none; }
+}
+
+.detail__head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--s1) var(--s2);
+}
+
+/* Bigger headline than the card that opened it (PDF p.4–7). */
+.detail__title {
+  margin-top: 12px;
+  font-size: clamp(24px, 2.4vw, 30px);
+  line-height: 1.3;
+}
+
+.detail__role {
+  margin-top: var(--s1);
+  font-size: 14px;
+  line-height: 22px;
+  color: var(--muted);
+}
+
+.detail__role .label {
+  margin-right: var(--s1);
+}
+
+.detail__body {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--s3);
+  margin-top: var(--s3);
+}
+
+.detail__main,
+.detail__aside {
+  min-width: 0;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .detail__aside {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--s2);
+    align-items: start;
+  }
+
+  .detail__aside .panel + .panel {
+    margin-top: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .detail__body {
+    grid-template-columns: minmax(0, 1fr) var(--aside-w);
+    gap: var(--s5);
+    margin-top: var(--s4);
+  }
+}
+
+/* KPI boxes — full-width row between the title and the STAR / panels */
+.kpis {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--s2);
+  margin-top: var(--s3);
+}
+
+.kpi {
+  padding: var(--s2) 20px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface-2);
+}
+
+@media (min-width: 640px) {
+  .kpis {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .kpi {
+    padding: var(--s2) var(--s3);
+  }
+}
+
+.kpi__num {
+  display: block;
+  font: 600 clamp(22px, 1.9vw + 4px, 28px)/32px var(--mono);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.kpi__desc {
+  display: block;
+  margin-top: 4px;
+  font-size: 13px;
+  line-height: 20px;
+  color: var(--muted);
+}
+
+/* STAR table: label left, body right */
+.star {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4px var(--s3);
+}
+
+.star dt {
+  font-size: 15px;
+  line-height: 24px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.star dt.star__result {
+  color: var(--blue);
+}
+
+.star dd {
+  margin-bottom: 12px;
+}
+
+.star dd:last-child {
+  margin-bottom: 0;
+}
+
+.star ul {
+  padding-left: 18px;
+  list-style: disc;
+}
+
+.star li {
+  font-size: 15px;
+  line-height: 24px;
+}
+
+.star li::marker {
+  color: var(--muted);
+}
+
+.star li + li {
+  margin-top: 4px;
+}
+
+@media (min-width: 640px) {
+  .star {
+    grid-template-columns: 104px minmax(0, 1fr);
+    gap: 12px var(--s3);
+  }
+
+  .star dd {
+    margin-bottom: 0;
+  }
+}
+
+/* Architecture / Stack / DAG panels */
+.panel {
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.panel + .panel {
+  margin-top: var(--s2);
+}
+
+.panel__title {
+  display: block;
+  padding: 12px 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.arch {
+  padding: 14px 20px;
+  font: 400 13px/22px var(--mono);
+  color: var(--text);
+}
+
+.arch span {
+  display: block;
+  padding-left: 1.25em;
+  text-indent: -1.25em;
+}
+
+.arch .arch__sub {
+  padding-left: 2.5em;
+}
+
+.arch .arch__foot {
+  margin-top: var(--s1);
+  color: var(--muted);
+}
+
+.stack > div {
+  display: grid;
+  grid-template-columns: 112px minmax(0, 1fr);
+  gap: 12px;
+  padding: 9px 20px;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.stack > div + div {
+  border-top: 1px solid var(--border);
+}
+
+.stack dt {
+  color: var(--muted);
+}
+
+.stack dd {
+  font-weight: 500;
+  color: var(--ink);
+}
+
+/* Narrow phones: label above value */
+@media (max-width: 479px) {
+  .stack > div {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .stack dt {
+    font-size: 12px;
+    line-height: 18px;
+  }
+}
+
+/* Links row + collapse button */
+.detail__foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s2) var(--s4);
+  margin-top: var(--s3);
+  padding-top: var(--s3);
+  border-top: 1px solid var(--border);
+}
+
+.detail__links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s2) var(--s4);
+  min-width: 0;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.detail__links a {
+  font-weight: 500;
+}
+
+/* Plain links: 40px hit box (22px line + 9px above/below); the negative
+   margins keep the row height. :where() lets the stack rule below win. */
+.detail__links > a:where(:not(.thumb-link, .applink)) {
+  display: inline-block;
+  padding: 9px 6px;
+  margin: -9px -6px;
+}
+
+/* Stacked PR links: 40px rows (22px line + 9px above/below), no gap, so the
+   boxes meet without overlapping; -9px keeps the first/last line in place. */
+.detail__links--stack {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  margin: -9px 0;
+}
+
+.detail__links--stack > a {
+  display: block;
+  padding: 9px 0;
+  margin: 0;
+}
+
+.detail__note {
+  display: block;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--muted);
+}
+
+.detail__links--stack .detail__note {
+  display: inline;
+}
+
+.detail__close {
+  flex: none;
+  margin-left: auto;
+}
+
+.thumb-link,
+.applink {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.thumb-link .thumb {
+  position: relative;
+  flex: none;
+  width: 120px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+.thumb-link .play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  margin: -15px 0 0 -15px;
+  border-radius: 50%;
+  background: rgba(20, 20, 20, 0.72);
+}
+
+.thumb-link .play::after {
+  content: "";
+  position: absolute;
+  top: 9px;
+  left: 12px;
+  border-left: 9px solid #fff;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+}
+
+.applink img {
+  width: 48px;
+  height: 48px;
+  flex: none;
+  border: 1px solid var(--border);
+  border-radius: 11px;
+}
+
+@media (max-width: 639px) {
+  .detail__foot {
+    align-items: stretch;
+  }
+
+  .detail__close {
+    flex: 1 1 100%;
+    justify-content: center;
+    margin-left: 0;
+  }
+}
+
+/* 10. Awards & Publication ------------------------- */
+.awards {
+  margin-top: var(--s1); /* rule → first line 24px */
+}
+
+/* Phones: date + award on row one, body full-width below. 768px+: 3 columns. */
+.award {
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr);
+  gap: 4px var(--s2);
+  padding: var(--s2) 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.award__date {
+  font: 400 12px/24px var(--mono);
+  color: var(--muted);
+}
+
+.award__name {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.award__name small {
+  margin-left: 4px;
+  font: 400 12px/18px var(--mono);
+  color: var(--muted);
+}
+
+.award__body {
+  grid-column: 1 / -1;
+  min-width: 0;
+}
+
+.award__event {
+  font-size: 15px;
+  line-height: 24px;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.award__host {
+  font-weight: 400;
+  color: var(--muted);
+}
+
+.award__desc {
+  margin-top: 2px;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+/* 40px-tall hit boxes: padding grows the target, negative margins cancel it. */
+.posts__more a,
+.contact__links a {
+  display: inline-block;
+  padding: 9px 6px;
+  margin: -9px -6px;
+}
+
+.contact__links a {
+  padding: 8px 6px;
+  margin: -8px -6px;
+}
+
+/* Award links: no left padding, so a wrapped link starts flush with the text;
+   the right padding covers the gap after it (8px stays in the layout):
+   link → link ≈ 12px, boxes do not overlap. */
+.award__link,
+.award__ref {
+  display: inline-block;
+  padding: 9px 11px 9px 0;
+  margin: -9px -3px -9px 0;
+  white-space: nowrap;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+@media (min-width: 768px) {
+  .award {
+    grid-template-columns: 88px 136px minmax(0, 1fr);
+    gap: 0 var(--s3);
+  }
+
+  .award__name small {
+    display: block;
+    margin-left: 0;
+  }
+
+  .award__body {
+    grid-column: 3;
+  }
+}
+
+/* 11. How I work ----------------------------------- */
+.principles {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--s2);
+  margin-top: var(--s3);
+}
+
+.principle {
+  padding: var(--card-pad);
+}
+
+.principle h3 {
+  margin-top: 12px;
+  font-size: 20px;
+  line-height: 28px;
+}
+
+.principle p {
+  margin-top: 12px;
+  font-size: 15px;
+  line-height: 25px;
+}
+
+@media (min-width: 900px) {
+  .principles {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--s3);
+  }
+}
+
+/* 12. Experience timeline -------------------------- */
+.timeline {
+  position: relative;
+  margin-top: var(--s3);
+  padding-left: var(--s3);
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  left: 4px;
+  width: 1px;
+  background: var(--rule-strong);
+}
+
+.tl-item {
+  position: relative;
+  padding-bottom: var(--s3);
+}
+
+.tl-item:last-child {
+  padding-bottom: 0;
+}
+
+/* 10px dot centred on the rail (x 4.5px) and the title line. */
+.tl-item::before {
+  content: "";
+  position: absolute;
+  top: 7px;
+  left: -24.5px;
+  width: 10px;
+  height: 10px;
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+  background: var(--surface);
+}
+
+.tl-item:first-child::before {
+  border-color: var(--blue);
+  background: var(--blue);
+}
+
+.tl-date {
+  display: block;
+  font: 400 12px/24px var(--mono);
+  color: var(--muted);
+}
+
+.tl-body {
+  min-width: 0;
+}
+
+.tl-title {
+  font-size: 17px;
+  line-height: 24px;
+  font-weight: 700;
+}
+
+/* Organisation: mono meta line under the title. */
+.tl-org {
+  font: 400 13px/22px var(--mono);
+  letter-spacing: 0.02em;
+  color: var(--muted);
+}
+
+.tl-desc {
+  margin-top: 4px;
+  max-width: 68ch;
+  font-size: 15px;
+  line-height: 24px;
+}
+
+@media (min-width: 768px) {
+  .timeline {
+    padding-left: 0;
+  }
+
+  .timeline::before {
+    left: calc(var(--tl-date-w) + var(--tl-gap) / 2);
+  }
+
+  .tl-item {
+    display: grid;
+    grid-template-columns: var(--tl-date-w) minmax(0, 1fr);
+    gap: 0 var(--tl-gap);
+    padding-bottom: var(--s4);
+  }
+
+  .tl-item::before {
+    left: calc(var(--tl-date-w) + var(--tl-gap) / 2 - 4.5px);
+  }
+}
+
+/* 13. Education & Skills --------------------------- */
+.edu-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--s4);
+  margin-top: var(--s3);
+}
+
+.block {
+  min-width: 0;
+}
+
+.block__title {
+  display: block;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--ink);
+}
+
+.edu {
+  padding: var(--s2) 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.edu__school {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.edu__when {
+  font: 400 12px/20px var(--mono);
+  color: var(--muted);
+}
+
+.edu__gpa {
+  margin-top: 4px;
+  font-size: 15px;
+  line-height: 24px;
+  color: var(--ink);
+}
+
+.edu-certs > div,
+.skills > div {
+  display: grid;
+  grid-template-columns: 112px minmax(0, 1fr);
+  gap: var(--s2);
+  padding: var(--s2) 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 15px;
+  line-height: 24px;
+}
+
+.edu-certs dt,
+.skills dt {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.edu-certs dd,
+.skills dd {
+  color: var(--ink);
+}
+
+@media (min-width: 768px) {
+  .edu-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr);
+    gap: var(--s6);
+  }
+}
+
+/* 14. Writing -------------------------------------- */
+.posts {
+  margin-top: var(--s1); /* rule → first line 24px */
+}
+
+.posts > li {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2px var(--s3);
+  padding: var(--s2) 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.post__date {
+  font: 400 12px/24px var(--mono);
+  color: var(--muted);
+}
+
+.post__title {
+  justify-self: start;
+  padding: 8px 6px; /* 40px hit box */
+  margin: -8px -6px;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.post__title:hover {
+  color: var(--blue);
+}
+
+.posts__more {
+  margin-top: var(--s2);
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 500;
+}
+
+@media (min-width: 640px) {
+  .posts > li {
+    grid-template-columns: 112px minmax(0, 1fr);
+  }
+}
+
+/* 15. Contact / Footer ----------------------------- */
+.contact__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--s4);
+  margin-top: var(--s3);
+}
+
+.contact__grid > div {
+  min-width: 0;
+}
+
+.contact__grid .sec-deck {
+  margin-top: 0;
+}
+
+.contact__email {
+  display: inline-block;
+  margin-top: var(--s2);
+  font-size: clamp(22px, 3vw, 36px);
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  overflow-wrap: anywhere;
+}
+
+.contact__email:hover {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+.copy-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px var(--s2);
+  margin-top: var(--s2);
+}
+
+.contact__links > div {
+  display: grid;
+  grid-template-columns: 96px minmax(0, 1fr);
+  gap: var(--s2);
+  padding: var(--s2) 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 15px;
+  line-height: 24px;
+}
+
+.contact__links dt {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.contact__links dd {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+@media (min-width: 768px) {
+  .contact__grid {
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    gap: var(--s6);
+  }
+}
+
+/* © line 24px under Contact's last rule; no rule of its own. */
+.site-footer {
+  padding: var(--s3) 0 var(--s5);
+  font: 400 12px/16px var(--mono);
+  letter-spacing: 0.02em;
+  color: var(--muted);
+}
+
+/* 16. Utilities ------------------------------------ */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* 17. Dark mode ------------------------------------ */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: #141414;
+    --surface: #1C1C1A;
+    --surface-2: #242421;
+    --photo-mat: #222220;
+    --photo-edge: rgba(0, 0, 0, 0.35);
+    --border: #2E2E2B;
+    --rule-strong: #3A3A36;
+    --ink: #F4F3EE;
+    --text: #D9D8D2;
+    --muted: #A3A39C;
+    --blue: #7B93FF;
+    --nav-bg: rgba(20, 20, 20, 0.82);
+    --selection: #141414;
+    --photo-filter: brightness(0.82) contrast(0.95);
+  }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #141414;
+  --surface: #1C1C1A;
+  --surface-2: #242421;
+  --photo-mat: #222220;
+  --photo-edge: rgba(0, 0, 0, 0.35);
+  --border: #2E2E2B;
+  --rule-strong: #3A3A36;
+  --ink: #F4F3EE;
+  --text: #D9D8D2;
+  --muted: #A3A39C;
+  --blue: #7B93FF;
+  --nav-bg: rgba(20, 20, 20, 0.82);
+  --selection: #141414;
+  --photo-filter: brightness(0.82) contrast(0.95);
+}
+
+/* 18. Motion / Print ------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0s !important;
+    animation: none !important;
+  }
+}
+
+@media print {
+  .site-header,
+  .skip-link,
+  .project__toggle,
+  .detail__close,
+  .copy-row {
+    display: none;
+  }
+
+  .project__detail[hidden] {
+    display: block;
+  }
+
+  .project__detail {
+    break-inside: avoid;
+  }
+}

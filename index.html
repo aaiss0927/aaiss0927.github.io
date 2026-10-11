@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>조현준 — AI를 만들고, AI로 일하는 개발자</title>
+  <meta name="description" content="AI 엔지니어 조현준의 포트폴리오. VeriMCP(카카오 × 한국정보과학회 AI 에이전트 경진대회 대상), Aingo(iOS App Store 출시), Loremaster, Apache Airflow 기여.">
+  <meta name="author" content="조현준">
+  <link rel="canonical" href="https://aaiss0927.github.io/">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#F4F3EE" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#141414" media="(prefers-color-scheme: dark)">
+
+  <!-- Open Graph / Twitter. The absolute URLs below (canonical, og:url, og:image,
+       twitter:image) are the only origin-specific values; change them together
+       if the site is ever served from another host. -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="og:title" content="조현준 — AI를 만들고, AI로 일하는 개발자">
+  <meta property="og:description" content="AI 엔지니어 조현준의 포트폴리오. VeriMCP(카카오 × 한국정보과학회 AI 에이전트 경진대회 대상), Aingo(iOS App Store 출시), Loremaster, Apache Airflow 기여.">
+  <meta property="og:url" content="https://aaiss0927.github.io/">
+  <meta property="og:image" content="https://aaiss0927.github.io/assets/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="조현준 — AI를 만들고, AI로 일하는 개발자">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="조현준 — AI를 만들고, AI로 일하는 개발자">
+  <meta name="twitter:description" content="AI 엔지니어 조현준의 포트폴리오. VeriMCP(카카오 × 한국정보과학회 AI 에이전트 경진대회 대상), Aingo(iOS App Store 출시), Loremaster, Apache Airflow 기여.">
+  <meta name="twitter:image" content="https://aaiss0927.github.io/assets/og.png">
+  <meta name="twitter:image:alt" content="조현준 — AI를 만들고, AI로 일하는 개발자">
+
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- Fonts: Pretendard Variable (jsdelivr) + JetBrains Mono (Google Fonts). No other external requests. -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&amp;display=swap">
+  <link rel="stylesheet" href="./styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "조현준",
+    "alternateName": "Hyeonjun Jo",
+    "url": "https://aaiss0927.github.io/",
+    "email": "aaiss0927@gmail.com",
+    "sameAs": [
+      "https://github.com/aaiss0927",
+      "https://www.linkedin.com/in/aaiss-hyeonjun-jo",
+      "https://velog.io/@aaiss0927/posts"
+    ],
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "인하대학교"
+    }
+  }
+  </script>
+  <noscript><style>.project__detail[hidden]{display:block}.project__toggle,.detail__close{display:none}.project{cursor:default}</style></noscript>
+</head>
+<body id="top">
+  <a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+  <!-- ================================================================ Header / Nav -->
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="#top" aria-label="조현준 — 맨 위로">
+        <svg class="brand__mark" viewBox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false">
+          <rect class="brand__tile" width="64" height="64" rx="14"/>
+          <path class="brand__glyph" d="M12 18h6v11h6V18h6v28h-6V35h-6v11h-6z"/>
+          <path class="brand__glyph" d="M38 18h14v20c0 5-4 8-8 8h-2c-4 0-8-3-8-8v-3h6v3c0 1 1 2 2 2h2c1 0 2-1 2-2V24h-8z"/>
+        </svg>
+        <span class="brand__name">조현준</span>
+      </a>
+      <nav class="site-nav" aria-label="섹션 이동">
+        <ul>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#awards">Awards</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#writing">Writing</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============================================================== Hero -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero__grid">
+        <div class="hero__text">
+          <p class="label">AI Engineer · LLM Agent · Computer Vision</p>
+          <h1 class="hero__title" id="hero-title">
+            <span class="hero__headline"><span class="nb">AI를 만들고,</span> <span class="nb">AI로 일하는 개발자</span></span>
+            <span class="hero__name">조현준</span>
+          </h1>
+        </div>
+
+        <figure class="hero__photo">
+          <img src="./assets/profile.jpg" width="709" height="992" alt="조현준 증명사진" fetchpriority="high">
+          <figcaption aria-hidden="true">Hyeonjun Jo</figcaption>
+        </figure>
+
+        <div class="hero__body">
+          <p class="hero__intro">데이터를 통해 사람들의 일상을 더 가치 있게 만드는 AI 엔지니어 조현준입니다.</p>
+          <ul class="hero__links" role="list" aria-label="링크">
+            <li><a class="btn" href="https://github.com/aaiss0927" target="_blank" rel="noopener">GitHub <span class="arrow" aria-hidden="true">↗</span></a></li>
+            <li><a class="btn" href="https://velog.io/@aaiss0927/posts" target="_blank" rel="noopener">Velog <span class="arrow" aria-hidden="true">↗</span></a></li>
+            <li><a class="btn" href="https://www.linkedin.com/in/aaiss-hyeonjun-jo" target="_blank" rel="noopener">LinkedIn <span class="arrow" aria-hidden="true">↗</span></a></li>
+            <li><a class="btn btn--primary" href="mailto:aaiss0927@gmail.com">Email</a></li>
+          </ul>
+        </div>
+
+        <dl class="hero__meta">
+          <div><dt>Now</dt><dd>AI·SW마에스트로 17기 연수생 (2026.06 – 현재) · 인하대학교 컴퓨터공학과 학사 (2026.02)</dd></div>
+          <div><dt>Interests</dt><dd>LLM 경량화·추론 가속 (AWQ, Speculative Decoding) · AI Agent 신뢰성 · Computer Vision</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ============================================================== 01 Projects -->
+    <section class="section" id="projects" aria-labelledby="projects-title">
+      <div class="container">
+        <div class="sec-head">
+          <h2 class="sec-title" id="projects-title">Projects</h2>
+          <span class="sec-num" aria-hidden="true">01 / 07</span>
+        </div>
+
+        <div class="project-grid">
+
+          <!-- ---------------------------------------------------- 01 VeriMCP -->
+          <article class="card project" id="project-verimcp" data-row="1">
+            <div class="project__meta">
+              <span class="label">Project 01</span>
+              <span class="project__tags"><span class="meta">2025</span><span class="badge">대상</span></span>
+            </div>
+            <h3 class="project__title">VeriMCP</h3>
+            <p class="project__summary">MCP 서버가 설명대로 동작하는지 대신 써보고 TrustScore를 매기는 멀티 에이전트. 카카오 × 한국정보과학회 AI 에이전트 경진대회 대상.</p>
+            <div class="project__foot">
+              <span class="flow">Planner → Performer → Estimator → Reporter</span>
+              <button class="project__toggle" type="button" aria-expanded="false" aria-controls="detail-verimcp"><span class="visually-hidden">VeriMCP </span><span class="when-closed">자세히 <span class="arrow" aria-hidden="true">↓</span></span><span class="when-open">접기 <span class="arrow" aria-hidden="true">↑</span></span></button>
+            </div>
+          </article>
+
+          <div class="card project__detail" id="detail-verimcp" data-row="1" role="region" aria-labelledby="detail-verimcp-title" tabindex="-1" hidden>
+            <div class="detail__head">
+              <span class="label">Project 01 <span class="bar" aria-hidden="true">|</span> VeriMCP</span>
+              <span class="meta">2025.11 – 2025.12</span>
+            </div>
+            <h4 class="detail__title" id="detail-verimcp-title">VeriMCP — MCP 서버가 설명대로 동작하는지 대신 써보고 점수를 매기는 검증 에이전트</h4>
+            <ul class="kpis" role="list" aria-label="핵심 지표">
+              <li class="kpi"><strong class="kpi__num">대상</strong><span class="kpi__desc">카카오 × 한국정보과학회 AI 에이전트 경진대회</span></li>
+              <li class="kpi"><strong class="kpi__num">0.82</strong><span class="kpi__desc">TrustScore = 근거 0.85 + 합의 0.78</span></li>
+              <li class="kpi"><strong class="kpi__num">4 Agents</strong><span class="kpi__desc">Planner, Performer, Estimator, Reporter</span></li>
+            </ul>
+            <div class="detail__body">
+              <div class="detail__main">
+                <dl class="star">
+                  <dt>Situation</dt>
+                  <dd><ul>
+                    <li>카카오 PlayMCP에 등록되는 MCP 서버는 빠르게 늘지만, 설명대로 동작하는지 확인할 방법은 사용자가 직접 써보는 것뿐</li>
+                    <li>툴이 많고 응답이 자연어라 사람이 일일이 검증하기 어려움</li>
+                  </ul></dd>
+                  <dt>Task</dt>
+                  <dd><ul>
+                    <li>서버 설명만으로 시나리오를 만들어 실제 호출하고, 신뢰도를 점수와 리포트로 돌려주는 에이전트 구축</li>
+                    <li>담당 — 시나리오를 반복 호출하는 구조의 병목인 <strong>검증 LLM 추론 가속</strong></li>
+                  </ul></dd>
+                  <dt>Action</dt>
+                  <dd><ul>
+                    <li>Planner가 시나리오 생성, Performer가 실제 툴 호출, e5-base 코사인 유사도로 기능을 벗어난 시나리오 필터</li>
+                    <li>Estimator — AutoRAG 근거 점수 0.5 + GPT, Kanana, Gemini 3모델 합의 0.5 = TrustScore (단일 모델 편향 방지)</li>
+                    <li>검증 LLM에 EAGLE-1 speculative decoding을 적용해 반복 호출 구간의 응답 지연 단축</li>
+                  </ul></dd>
+                  <dt class="star__result">Result</dt>
+                  <dd><ul>
+                    <li>카카오 × 한국정보과학회 AI 에이전트 경진대회 <strong>대상</strong></li>
+                    <li>데모 세션 TrustScore 0.82 (RAG Fact 0.85, Self Consensus 0.78)</li>
+                    <li>리포트가 "카페 검색에 방탈출 카페가 섞임", "미래 날짜 입력" 같은 오류 영역까지 근거와 함께 제시</li>
+                  </ul></dd>
+                </dl>
+              </div>
+              <aside class="detail__aside">
+                <div class="panel">
+                  <h5 class="panel__title label">Architecture</h5>
+                  <div class="arch">
+                    <span>Chrome Extension (PlayMCP DOM 읽기)</span>
+                    <span>↓ FastAPI 백엔드, In-Memory State</span>
+                    <span>↓ Planner — 시나리오 생성</span>
+                    <span>↓ Performer — 실제 툴 호출, e5-base 유사도 필터</span>
+                    <span>↓ Estimator — AutoRAG 0.5 + 3-LLM 0.5</span>
+                    <span>↓ Reporter — TrustScore, 리포트</span>
+                  </div>
+                </div>
+                <div class="panel">
+                  <h5 class="panel__title label">Stack</h5>
+                  <dl class="stack">
+                    <div><dt>Language</dt><dd>Python</dd></div>
+                    <div><dt>Backend</dt><dd>FastAPI, MCP</dd></div>
+                    <div><dt>Client</dt><dd>Chrome Extension</dd></div>
+                    <div><dt>Verification</dt><dd>AutoRAG, e5-base, GPT / Kanana / Gemini</dd></div>
+                    <div><dt>Inference</dt><dd>EAGLE-1 Speculative Decoding</dd></div>
+                  </dl>
+                </div>
+              </aside>
+            </div>
+            <div class="detail__foot">
+              <div class="detail__links">
+                <a class="thumb-link" href="https://www.youtube.com/watch?v=tqor1ZK5v5k" target="_blank" rel="noopener">
+                  <span class="thumb"><img src="./assets/verimcp-demo-thumb.jpg" width="480" height="360" alt="" loading="lazy"><span class="play" aria-hidden="true"></span></span>
+                  <span>데모 영상 <span class="arrow" aria-hidden="true">↗</span></span>
+                </a>
+                <a href="https://v.daum.net/v/20251218154103272" target="_blank" rel="noopener">관련 기사 <span class="arrow" aria-hidden="true">↗</span></a>
+              </div>
+              <button class="btn btn--small detail__close" type="button" data-close="detail-verimcp"><span class="visually-hidden">VeriMCP </span>접기 <span class="arrow" aria-hidden="true">↑</span></button>
+            </div>
+          </div>
+
+          <!-- ---------------------------------------------------- 02 Aingo -->
+          <article class="card project" id="project-aingo" data-row="1">
+            <div class="project__meta">
+              <span class="label">Project 02</span>
+              <span class="project__tags"><span class="meta">2026</span><span class="badge">App Store 출시</span></span>
+            </div>
+            <h3 class="project__title"><img class="project__icon" src="./assets/aingo-icon.jpg" width="512" height="512" alt="" loading="lazy">Aingo</h3>
+            <p class="project__summary">하루 10분 퀴즈로 AI 활용 능력을 키우는 앱. 문항은 검증된 '틀'에서 자동 생성하고 사람이 판정하는 콘텐츠 엔진과 역량 평가 체계를 설계.</p>
+            <div class="project__foot">
+              <span class="flow">시드 51 → 문항모형 31 → 문항 780 | 웹 체험 완주율 92.3%</span>
+              <button class="project__toggle" type="button" aria-expanded="false" aria-controls="detail-aingo"><span class="visually-hidden">Aingo </span><span class="when-closed">자세히 <span class="arrow" aria-hidden="true">↓</span></span><span class="when-open">접기 <span class="arrow" aria-hidden="true">↑</span></span></button>
+            </div>
+          </article>
+
+          <div class="card project__detail" id="detail-aingo" data-row="1" role="region" aria-labelledby="detail-aingo-title" tabindex="-1" hidden>
+            <div class="detail__head">
+              <span class="label">Project 02 <span class="bar" aria-hidden="true">|</span> Aingo</span>
+              <span class="meta">2026 · AI·SW마에스트로 17기 팀 프로젝트 · App Store 출시 2026.09.05 · 현재 v1.1.0</span>
+            </div>
+            <h4 class="detail__title" id="detail-aingo-title">Aingo — 하루 10분 퀴즈로 AI 활용 능력을 키우는 앱, 문항은 '틀'에서 자동 생성하고 사람이 판정</h4>
+            <p class="detail__role"><span class="label label--muted">Role</span> AI 활용 역량 정의 및 평가 체계 설계·검증, 문항 생성 엔진 (팀 프로젝트)</p>
+            <ul class="kpis" role="list" aria-label="핵심 지표">
+              <li class="kpi"><strong class="kpi__num">App Store</strong><span class="kpi__desc">iOS 정식 출시</span></li>
+              <li class="kpi"><strong class="kpi__num">780</strong><span class="kpi__desc">문항모형 31개에서 자동 생성한 문항</span></li>
+              <li class="kpi"><strong class="kpi__num">92.3%</strong><span class="kpi__desc">웹 체험 완주율 (설문 171, 인터뷰 20)</span></li>
+            </ul>
+            <div class="detail__body">
+              <div class="detail__main">
+                <dl class="star">
+                  <dt>Situation</dt>
+                  <dd><ul>
+                    <li>AI를 잘 쓰고 싶은 사람은 많지만 무엇부터 배울지 막막하고, 긴 강의는 이어지지 않음</li>
+                    <li>매일 짧은 퀴즈로 습관화하려면 'AI 활용 능력'을 실제로 재는 문항을 품질 보장하며 계속 공급해야 함</li>
+                  </ul></dd>
+                  <dt>Task</dt>
+                  <dd><ul>
+                    <li>LLM에 자유 생성을 맡기면 품질도, 무엇을 재는지도 흔들림 — 측정할 능력을 먼저 정의</li>
+                    <li>검증된 문항의 판단 구조는 고정한 채 변형만 자동화하고, 잘못된 문항이 사용자에게 닿지 않도록 <strong>검수 게이트</strong> 설계</li>
+                  </ul></dd>
+                  <dt>Action</dt>
+                  <dd><ul>
+                    <li>AI 활용 역량을 5영역(위임 판단, 지시/소통, 산출물 검증, 안전/윤리, 적정 의존)으로 정의, 영역별 시드 문항 51개 직접 작성</li>
+                    <li>Gierl &amp; Lai의 템플릿 기반 AIG로 시드를 31개 문항모형으로 승격 — 판단 구조는 고정, 작업과 상황만 변형</li>
+                    <li>최신 AI 뉴스 소재 600여 건을 기계 필터와 LLM 판정으로 모형당 최대 10개 라우팅 → 값 변형으로 문항 생성</li>
+                    <li>5영역을 실제로 재는지는 응답 데이터로 CFA → IRT 검증하도록 평가 체계 설계</li>
+                  </ul></dd>
+                  <dt class="star__result">Result</dt>
+                  <dd><ul>
+                    <li>iOS App Store <strong>정식 출시</strong> — 출시 전 인터뷰 20명, 설문 171건, 웹 체험 완주율 92.3%로 수요 확인</li>
+                    <li>문항 780개 자동 생성, 문항모형 31개는 전문가 검토 진행 중</li>
+                  </ul></dd>
+                </dl>
+              </div>
+              <aside class="detail__aside">
+                <div class="panel">
+                  <h5 class="panel__title label">Architecture</h5>
+                  <div class="arch">
+                    <span>시드 문항 51 → 문항모형 31 (판단 구조 고정, 변형 영역)</span>
+                    <span>↓ 소재 라우팅 — 기계 필터 + LLM 판정 (AI 뉴스 600여 건, 모형당 ≤ 10)</span>
+                    <span>↓ 값 변형 → 문항 780 생성</span>
+                    <span>↓ 자동 게이트 → 사람 검수 → 전문가 검토</span>
+                    <span>↓ 응답 데이터로 CFA → IRT 검증</span>
+                  </div>
+                </div>
+                <div class="panel">
+                  <h5 class="panel__title label">Stack</h5>
+                  <dl class="stack">
+                    <div><dt>Language</dt><dd>Python</dd></div>
+                    <div><dt>LLM</dt><dd>LLM Orchestration (Bedrock)</dd></div>
+                    <div><dt>Method</dt><dd>Gierl &amp; Lai AIG, CFA / IRT</dd></div>
+                    <div><dt>Data</dt><dd>AI 뉴스 소재 지식베이스</dd></div>
+                    <div><dt>Platform</dt><dd>iOS, Web, Admin</dd></div>
+                  </dl>
+                </div>
+              </aside>
+            </div>
+            <div class="detail__foot">
+              <div class="detail__links">
+                <a class="applink" href="https://apps.apple.com/kr/app/aingo/id6800742931" target="_blank" rel="noopener">
+                  <img src="./assets/aingo-icon.jpg" width="512" height="512" alt="" loading="lazy">
+                  <span>App Store <span class="arrow" aria-hidden="true">↗</span><span class="detail__note">"매일 10분, AI 활용 능력 키우기" · 교육</span></span>
+                </a>
+              </div>
+              <button class="btn btn--small detail__close" type="button" data-close="detail-aingo"><span class="visually-hidden">Aingo </span>접기 <span class="arrow" aria-hidden="true">↑</span></button>
+            </div>
+          </div>
+
+          <!-- ---------------------------------------------------- 03 Loremaster -->
+          <article class="card project" id="project-loremaster" data-row="2">
+            <div class="project__meta">
+              <span class="label">Project 03</span>
+              <span class="project__tags"><span class="meta">2026.06 – 현재</span><span class="badge">3개월 운영</span></span>
+            </div>
+            <h3 class="project__title">Loremaster</h3>
+            <p class="project__summary">Slack에서 부르면 Jira와 위키를 움직이는 팀 운영 에이전트. 탐지와 제안은 AI가, 판정과 실행 승인은 사람이.</p>
+            <div class="project__foot">
+              <span class="flow">Jira 이슈 615건 | 위키 자동 정제 347회 | 충돌 25건 탐지</span>
+              <button class="project__toggle" type="button" aria-expanded="false" aria-controls="detail-loremaster"><span class="visually-hidden">Loremaster </span><span class="when-closed">자세히 <span class="arrow" aria-hidden="true">↓</span></span><span class="when-open">접기 <span class="arrow" aria-hidden="true">↑</span></span></button>
+            </div>
+          </article>
+
+          <div class="card project__detail" id="detail-loremaster" data-row="2" role="region" aria-labelledby="detail-loremaster-title" tabindex="-1" hidden>
+            <div class="detail__head">
+              <span class="label">Project 03 <span class="bar" aria-hidden="true">|</span> Loremaster</span>
+              <span class="meta">운영 대상 — 프로젝트 AINGO (3인 팀)</span>
+            </div>
+            <h4 class="detail__title" id="detail-loremaster-title">Loremaster — Slack에서 Jira와 위키를 움직이는 팀 운영 에이전트, 탐지는 AI가 판정은 사람이</h4>
+            <ul class="kpis" role="list" aria-label="핵심 지표">
+              <li class="kpi"><strong class="kpi__num">615</strong><span class="kpi__desc">Jira 이슈 관리 (493건 완료)</span></li>
+              <li class="kpi"><strong class="kpi__num">347</strong><span class="kpi__desc">위키 자동 정제 커밋, 3개월 무중단</span></li>
+              <li class="kpi"><strong class="kpi__num">25</strong><span class="kpi__desc">문서 충돌 탐지, 사람이 판정 후 해소</span></li>
+            </ul>
+            <div class="detail__body">
+              <div class="detail__main">
+                <dl class="star">
+                  <dt>Situation</dt>
+                  <dd><ul>
+                    <li>3인 팀의 회의록, 결정, PR 설명이 Slack, Notion, git에 흩어지고 같은 사안에 서로 다른 결정이 문서마다 남음</li>
+                    <li>백로그를 정리하고 문서를 맞추는 일이 개발 시간을 계속 잠식</li>
+                  </ul></dd>
+                  <dt>Task</dt>
+                  <dd><ul>
+                    <li>모든 문서를 하나의 지식원으로 정제하고, 충돌 탐지와 백로그 관리를 에이전트에 위임</li>
+                    <li>단, <strong>실행 권한은 사람에게</strong> — 팀이 실제로 쓰는 운영 도구로 정착시키기</li>
+                  </ul></dd>
+                  <dt>Action</dt>
+                  <dd><ul>
+                    <li>VPS에 Hermes Agent 배치, 스킬 15개(서버 11, 로컬 2, 플러그인 2)로 역할 분리</li>
+                    <li><code>refine-wiki</code> — 원본 문서를 개념 단위 위키(git, Obsidian)로 정제 및 커밋, graphify로 지식그래프 구성</li>
+                    <li><code>conflict-detection</code> — 문서 간 모순을 CONFLICT 파일로 남기고 Slack에 보고, 해소는 사람이 판정</li>
+                    <li><code>backlog-proposal</code> — 위키 근거를 붙인 이슈 초안 제안, Slack 승인 게이트(Allow / Deny) 통과분만 Jira에 생성</li>
+                  </ul></dd>
+                  <dt class="star__result">Result</dt>
+                  <dd><ul>
+                    <li>2026년 6월부터 <strong>3개월 연속 운영</strong> — 원본 문서 404개를 개념 노드 105개, 관계 138개의 위키로 정제 (자동 커밋 347회)</li>
+                    <li>충돌 25건 탐지 후 팀 판정, Jira 이슈 615건 관리 및 493건 완료 (2026-09-26 기준 Jira, git, Slack 로그 실측)</li>
+                  </ul></dd>
+                </dl>
+              </div>
+              <aside class="detail__aside">
+                <div class="panel">
+                  <h5 class="panel__title label">Architecture</h5>
+                  <div class="arch">
+                    <span>GitHub webhook, Slack @멘션, cron</span>
+                    <span>↓ Hermes Agent (VPS), 스킬 15</span>
+                    <span>↓ LLM Wiki 정제 → graphify → 충돌 탐지</span>
+                    <span>↓ Slack 승인 게이트 Allow / Deny</span>
+                    <span>↓ Jira REST, Atlassian MCP</span>
+                  </div>
+                </div>
+                <div class="panel">
+                  <h5 class="panel__title label">Stack</h5>
+                  <dl class="stack">
+                    <div><dt>Agent</dt><dd>Hermes Agent on VPS</dd></div>
+                    <div><dt>Interface</dt><dd>Slack Socket Mode, Block Kit</dd></div>
+                    <div><dt>Issue Tracker</dt><dd>Jira REST, Atlassian MCP</dd></div>
+                    <div><dt>Knowledge</dt><dd>LLM Wiki (git, Obsidian), graphify</dd></div>
+                    <div><dt>Trigger</dt><dd>GitHub webhook, cron</dd></div>
+                  </dl>
+                </div>
+              </aside>
+            </div>
+            <div class="detail__foot">
+              <div class="detail__links">
+                <span class="detail__note">비공개 운영 도구 — 공개 링크 없음</span>
+              </div>
+              <button class="btn btn--small detail__close" type="button" data-close="detail-loremaster"><span class="visually-hidden">Loremaster </span>접기 <span class="arrow" aria-hidden="true">↑</span></button>
+            </div>
+          </div>
+
+          <!-- ---------------------------------------------------- 04 Apache Airflow -->
+          <article class="card project" id="project-airflow" data-row="2">
+            <div class="project__meta">
+              <span class="label">Project 04</span>
+              <span class="project__tags"><span class="meta">2026</span><span class="badge">2 PRs merged</span></span>
+            </div>
+            <h3 class="project__title">Apache Airflow</h3>
+            <p class="project__summary">한국어 번역 누락을 자동 탐지하는 DAG를 만들고, 찾아낸 누락을 원본 저장소에 반영해 병합.</p>
+            <div class="project__foot">
+              <span class="flow">PR #70005, #70211 merged into apache:main</span>
+              <button class="project__toggle" type="button" aria-expanded="false" aria-controls="detail-airflow"><span class="visually-hidden">Apache Airflow </span><span class="when-closed">자세히 <span class="arrow" aria-hidden="true">↓</span></span><span class="when-open">접기 <span class="arrow" aria-hidden="true">↑</span></span></button>
+            </div>
+          </article>
+
+          <div class="card project__detail" id="detail-airflow" data-row="2" role="region" aria-labelledby="detail-airflow-title" tabindex="-1" hidden>
+            <div class="detail__head">
+              <span class="label">Project 04 <span class="bar" aria-hidden="true">|</span> Apache Airflow</span>
+              <span class="meta">2026.07.17 – 2026.07.30</span>
+            </div>
+            <h4 class="detail__title" id="detail-airflow-title">Apache Airflow — 번역 누락을 사람이 찾는 대신 Airflow로 Airflow의 누락을 찾기</h4>
+            <ul class="kpis" role="list" aria-label="핵심 지표">
+              <li class="kpi"><strong class="kpi__num">2 PRs</strong><span class="kpi__desc">apache/airflow main에 병합 — #70005, #70211</span></li>
+              <li class="kpi"><strong class="kpi__num">Weekly</strong><span class="kpi__desc">주간 스케줄 DAG, 누락 시에만 알림</span></li>
+              <li class="kpi"><strong class="kpi__num">Global</strong><span class="kpi__desc">릴리스로 전 세계 사용자에게 제공 (Airflow 3.3.1부터)</span></li>
+            </ul>
+            <div class="detail__body">
+              <div class="detail__main">
+                <dl class="star">
+                  <dt>Situation</dt>
+                  <dd><ul>
+                    <li>Airflow UI 다국어 번역은 영어 원본에 키가 추가될 때마다 각 언어 파일이 따라가야 함</li>
+                    <li>한국어 파일이 놓치면 화면에 영어가 섞이는데, 누락을 확인하는 방법은 사람이 두 파일을 대조하는 것뿐</li>
+                  </ul></dd>
+                  <dt>Task</dt>
+                  <dd><ul>
+                    <li>원본과 한국어 번역 파일을 주기적으로 비교해 누락 키를 자동으로 알려주는 DAG 구축</li>
+                    <li>DAG가 찾아낸 누락을 <strong>원본 저장소에 직접 반영</strong></li>
+                  </ul></dd>
+                  <dt>Action</dt>
+                  <dd><ul>
+                    <li>GitHub에서 en, ko 번역 JSON 수집 — API 한도(403) 시 raw 콘텐츠로 폴백</li>
+                    <li>중첩 JSON을 <code>a.b.c</code> 형태의 키 집합으로 평탄화하고, 두 집합의 차로 한국어에 없는 키 산출</li>
+                    <li>BranchPythonOperator로 누락이 있을 때만 이메일 발송, 주간 스케줄에 <code>catchup=False</code>로 과거 실행 누적 방지</li>
+                    <li>찾아낸 누락 키를 번역해 apache/airflow에 PR, 리뷰어 피드백 반영 후 병합</li>
+                  </ul></dd>
+                  <dt class="star__result">Result</dt>
+                  <dd><ul>
+                    <li>PR #70005 <code>i18n(ko): add missing translations</code>가 apache:main에 <strong>병합</strong>, 이어진 PR #70211도 병합</li>
+                    <li>Apache Airflow 릴리스에 포함되어 전 세계 한국어 사용자에게 제공, 누락 탐지는 DAG가 주간으로 계속</li>
+                  </ul></dd>
+                </dl>
+              </div>
+              <aside class="detail__aside">
+                <div class="panel">
+                  <h5 class="panel__title label">DAG</h5>
+                  <div class="arch">
+                    <span>fetch_en, fetch_ko</span>
+                    <span>↓ flatten (a.b.c)</span>
+                    <span>↓ set_diff</span>
+                    <span>↓ branch</span>
+                    <span class="arch__sub">missing &gt; 0 → send_email</span>
+                    <span class="arch__sub">missing = 0 → skip</span>
+                    <span class="arch__foot">schedule weekly, catchup=False</span>
+                  </div>
+                </div>
+                <div class="panel">
+                  <h5 class="panel__title label">Stack</h5>
+                  <dl class="stack">
+                    <div><dt>Orchestration</dt><dd>Apache Airflow</dd></div>
+                    <div><dt>Language</dt><dd>Python</dd></div>
+                    <div><dt>Operator</dt><dd>BranchPythonOperator</dd></div>
+                    <div><dt>Source</dt><dd>GitHub API, i18n JSON</dd></div>
+                  </dl>
+                </div>
+              </aside>
+            </div>
+            <div class="detail__foot">
+              <div class="detail__links detail__links--stack">
+                <a href="https://github.com/apache/airflow/pull/70005" target="_blank" rel="noopener"><span class="url">apache/airflow#70005</span> i18n(ko): add missing translations(Jul 17) <span class="detail__note">· merged 2026-07-20</span> <span class="arrow" aria-hidden="true">↗</span></a>
+                <a href="https://github.com/apache/airflow/pull/70211" target="_blank" rel="noopener"><span class="url">apache/airflow#70211</span> i18n(ko): add missing translations(Jul 22) <span class="detail__note">· merged 2026-07-30</span> <span class="arrow" aria-hidden="true">↗</span></a>
+                <a href="https://github.com/aaiss0927/airflow-i18n-ko-sync" target="_blank" rel="noopener"><span class="url">aaiss0927/airflow-i18n-ko-sync</span> 파이프라인 저장소 <span class="arrow" aria-hidden="true">↗</span></a>
+              </div>
+              <button class="btn btn--small detail__close" type="button" data-close="detail-airflow"><span class="visually-hidden">Apache Airflow </span>접기 <span class="arrow" aria-hidden="true">↑</span></button>
+            </div>
+          </div>
+
+        </div><!-- /.project-grid -->
+      </div>
+    </section>
+
+    <!-- ============================================================== 02 Awards & Publication -->
+    <section class="section" id="awards" aria-labelledby="awards-title">
+      <div class="container">
+        <div class="sec-head">
+          <h2 class="sec-title" id="awards-title">Awards &amp; Publication</h2>
+          <span class="sec-num" aria-hidden="true">02 / 07</span>
+        </div>
+        <ol class="awards" role="list">
+          <li class="award">
+            <span class="award__date">2025.12</span>
+            <strong class="award__name">대상</strong>
+            <div class="award__body">
+              <p class="award__event">카카오 × 한국정보과학회 AI 에이전트 경진대회</p>
+              <p class="award__desc">
+                <a class="award__ref" href="#project-verimcp">VeriMCP <span class="arrow" aria-hidden="true">→</span> Project 01</a>
+                <a class="award__link" href="https://v.daum.net/v/20251218154103272" target="_blank" rel="noopener">기사 <span class="arrow" aria-hidden="true">↗</span></a>
+              </p>
+            </div>
+          </li>
+          <li class="award">
+            <span class="award__date">2025.12</span>
+            <strong class="award__name">논문 <small>제1저자</small></strong>
+            <div class="award__body">
+              <p class="award__event">KSC 2025 <span class="award__host">(한국정보과학회 한국소프트웨어종합학술대회)</span></p>
+              <p class="award__desc"><strong>Hyeonjun Jo</strong>, Seokho Ahn, Young-Duk Seo, "Development of K-MMSE-based Simple Dementia Diagnosis and Clinic Chatbot" — K-MMSE 하위 항목 기반 치매 선별 로지스틱 회귀 모델</p>
+            </div>
+          </li>
+          <li class="award">
+            <span class="award__date">2025.08</span>
+            <strong class="award__name">우수상 <small>7위 / 271팀</small></strong>
+            <div class="award__body">
+              <p class="award__event">2025 SW중심대학 디지털 경진대회 AI 부문 <span class="award__host">(주최 과학기술정보통신부, 주관 소프트웨어중심대학협의회)</span></p>
+              <p class="award__desc">AI 생성 텍스트 판별: LLaMA·Gemma 데이터 증강으로 데이터셋 1,060% 확장(97,172개 → 1,125,652개), 한국어 DeBERTa 앙상블 + 슬라이딩 윈도우로 ROC-AUC 0.924
+                <a class="award__link" href="https://github.com/aaiss0927/SW-2025" target="_blank" rel="noopener">GitHub <span class="arrow" aria-hidden="true">↗</span></a>
+                <a class="award__link" href="https://www.hankyung.com/article/202508185337h" target="_blank" rel="noopener">기사 <span class="arrow" aria-hidden="true">↗</span></a>
+              </p>
+            </div>
+          </li>
+          <li class="award">
+            <span class="award__date">2025.08</span>
+            <strong class="award__name">우수상 <small>3위 / 27팀</small></strong>
+            <div class="award__body">
+              <p class="award__event">2025 인하 인공지능 챌린지 <span class="award__host">(주최 인하대학교)</span></p>
+              <p class="award__desc">언어 정보 기반 이미지 색채화: L-CAD 제로샷 + SAM 2.1 멀티 가이던스 앙상블, 평가 산식 0.672
+                <a class="award__link" href="https://github.com/aaiss0927/IC-2025" target="_blank" rel="noopener">GitHub <span class="arrow" aria-hidden="true">↗</span></a>
+              </p>
+            </div>
+          </li>
+          <li class="award">
+            <span class="award__date">2023.04</span>
+            <strong class="award__name">성적 우수상</strong>
+            <div class="award__body">
+              <p class="award__event">인하대학교 소프트웨어융합대학</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============================================================== 03 How I Work -->
+    <section class="section" id="how-i-work" aria-labelledby="how-title">
+      <div class="container">
+        <div class="sec-head">
+          <h2 class="sec-title" id="how-title">How I Work</h2>
+          <span class="sec-num" aria-hidden="true">03 / 07</span>
+        </div>
+        <ol class="principles" role="list">
+          <li class="card principle">
+            <span class="label">01</span>
+            <h3>검증을 먼저 설계</h3>
+            <p>생성보다 판정을 먼저 만듭니다. VeriMCP의 TrustScore, Aingo의 문항 검수 게이트, Airflow의 키 집합 diff — 모두 "맞는지 어떻게 아는가"를 먼저 정한 뒤 만든 것입니다.</p>
+          </li>
+          <li class="card principle">
+            <span class="label">02</span>
+            <h3>탐지는 AI, 판정은 사람</h3>
+            <p>에이전트에 실행 권한을 그대로 주지 않습니다. Loremaster는 위키 정제, 충돌 탐지, 이슈 제안까지만 자동이고, Jira 쓰기는 Slack 승인 게이트를 지나야 합니다.</p>
+          </li>
+          <li class="card principle">
+            <span class="label">03</span>
+            <h3>성과로 증명</h3>
+            <p>스토어에 올라간 앱, 원본 저장소에 병합된 PR, 로그에 남은 347회의 자동 커밋. 이 포트폴리오의 숫자는 모두 Jira, git, Slack, App Store에서 확인할 수 있는 값입니다.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============================================================== 04 Experience -->
+    <section class="section" id="experience" aria-labelledby="experience-title">
+      <div class="container">
+        <div class="sec-head">
+          <h2 class="sec-title" id="experience-title">Experience</h2>
+          <span class="sec-num" aria-hidden="true">04 / 07</span>
+        </div>
+        <ol class="timeline" role="list">
+          <li class="tl-item">
+            <span class="tl-date">2026.06 – 현재</span>
+            <div class="tl-body">
+              <h3 class="tl-title">AI·SW마에스트로 17기 연수생</h3>
+              <p class="tl-org">과학기술정보통신부 주관, 창업 트랙</p>
+              <p class="tl-desc">AI 활용법 학습 서비스 'Aingo'를 iOS App Store에 출시. AI 활용 역량 정의 및 평가 체계를 설계하고 검증.</p>
+            </div>
+          </li>
+          <li class="tl-item">
+            <span class="tl-date">2026.01 – 2026.02</span>
+            <div class="tl-body">
+              <h3 class="tl-title">LG Aimers 8기 교육생</h3>
+              <p class="tl-org">LG AI연구원</p>
+              <p class="tl-desc">LLM 학계 트렌드 교육 이수. 리더보드 실습에서 AWQ 양자화로 EXAONE-4.0의 GSM8K, KMMLU 벤치마크 성능을 유지하며 모델 크기 50% 감축.</p>
+            </div>
+          </li>
+          <li class="tl-item">
+            <span class="tl-date">2025.06 – 2026.01</span>
+            <div class="tl-body">
+              <h3 class="tl-title">인하대학교 지식기반 데이터 분석 연구실 학부연구생</h3>
+              <p class="tl-desc">K-MMSE 기반 간이 치매 진단 및 클리닉 챗봇 연구, KSC2025 논문 제1저자.</p>
+            </div>
+          </li>
+          <li class="tl-item">
+            <span class="tl-date">2024.08 – 2025.08</span>
+            <div class="tl-body">
+              <h3 class="tl-title">인하대학교 인공지능학회 부회장</h3>
+              <p class="tl-desc">학회 운영 총괄. 약 30명 규모를 약 100명으로 확장, 체계적인 스터디·프로젝트 지원으로 2025년 학회 수상 실적 11건.</p>
+            </div>
+          </li>
+          <li class="tl-item">
+            <span class="tl-date">2024.08 – 2025.02</span>
+            <div class="tl-body">
+              <h3 class="tl-title">네이버 부스트캠프 AI Tech 7기 교육생 (CV 트랙)</h3>
+              <p class="tl-org">네이버커넥트, 960시간</p>
+              <p class="tl-desc">Image Classification, Object Detection, Segmentation 프로젝트를 리더보드 형식으로 수행.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============================================================== 05 Education & Skills -->
+    <section class="section" id="education" aria-labelledby="education-title">
+      <div class="container">
+        <div class="sec-head">
+          <h2 class="sec-title" id="education-title">Education &amp; Skills</h2>
+          <span class="sec-num" aria-hidden="true">05 / 07</span>
+        </div>
+        <div class="edu-grid">
+          <section class="block" aria-labelledby="edu-block-title">
+            <h3 class="block__title label" id="edu-block-title">Education</h3>
+            <div class="edu">
+              <p class="edu__school">인하대학교 컴퓨터공학과 학사</p>
+              <p class="edu__when">2022.03 – 2026.02</p>
+              <p class="edu__gpa">Total GPA 4.26 / 4.5 · Major GPA 4.24 / 4.5</p>
+            </div>
+            <dl class="edu-certs">
+              <div><dt>자격 / 어학</dt><dd>ADsP (2025.06) · TOEIC Speaking IH 140 (2025.06)</dd></div>
+            </dl>
+          </section>
+          <section class="block" aria-labelledby="skills-title">
+            <h3 class="block__title label" id="skills-title">Skills</h3>
+            <dl class="skills">
+              <div><dt>Language</dt><dd>Python, SQL</dd></div>
+              <div><dt>ML / DL</dt><dd>PyTorch, Hugging Face, Transformers, scikit-learn</dd></div>
+              <div><dt>LLM</dt><dd>LLM Agents, RAG, MCP</dd></div>
+              <div><dt>Backend / Data</dt><dd>FastAPI, Apache Airflow</dd></div>
+              <div><dt>Infra / Tools</dt><dd>Linux, git, Slack, Jira, Claude Code</dd></div>
+            </dl>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================== 06 Writing -->
+    <section class="section" id="writing" aria-labelledby="writing-title">
+      <div class="container">
+        <div class="sec-head">
+          <h2 class="sec-title" id="writing-title">Writing</h2>
+          <span class="sec-num" aria-hidden="true">06 / 07</span>
+        </div>
+        <ul class="posts" role="list">
+          <li>
+            <span class="post__date">2026.03.25</span>
+            <a class="post__title" href="https://velog.io/@aaiss0927/82iwkdj1" target="_blank" rel="noopener">AI·SW마에스트로 17기 합격 후기 <span class="arrow" aria-hidden="true">↗</span></a>
+          </li>
+          <li>
+            <span class="post__date">2025.11.05</span>
+            <a class="post__title" href="https://velog.io/@aaiss0927/Graph-Search" target="_blank" rel="noopener">Graph Search <span class="arrow" aria-hidden="true">↗</span></a>
+          </li>
+          <li>
+            <span class="post__date">2025.08.13</span>
+            <a class="post__title" href="https://velog.io/@aaiss0927/Hash-Table" target="_blank" rel="noopener">Hash Table <span class="arrow" aria-hidden="true">↗</span></a>
+          </li>
+        </ul>
+        <p class="posts__more"><a href="https://velog.io/@aaiss0927/posts" target="_blank" rel="noopener">전체 보기 <span class="arrow" aria-hidden="true">↗</span></a></p>
+      </div>
+    </section>
+
+    <!-- ============================================================== 07 Contact -->
+    <section class="section" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="sec-head">
+          <h2 class="sec-title" id="contact-title">Contact</h2>
+          <span class="sec-num" aria-hidden="true">07 / 07</span>
+        </div>
+        <div class="contact__grid">
+          <div>
+            <p class="sec-deck">협업·채용 문의는 이메일로 주세요.</p>
+            <a class="contact__email" href="mailto:aaiss0927@gmail.com">aaiss0927@gmail.com</a>
+            <div class="copy-row">
+              <button class="btn btn--small" type="button" data-copy="aaiss0927@gmail.com">복사</button>
+              <span class="visually-hidden" id="copy-status" role="status" aria-live="polite"></span>
+            </div>
+          </div>
+          <dl class="contact__links">
+            <div><dt>GitHub</dt><dd><a href="https://github.com/aaiss0927" target="_blank" rel="noopener">github.com/aaiss0927&nbsp;<span class="arrow" aria-hidden="true">↗</span></a></dd></div>
+            <div><dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/aaiss-hyeonjun-jo" target="_blank" rel="noopener">linkedin.com/in/aaiss-hyeonjun-jo&nbsp;<span class="arrow" aria-hidden="true">↗</span></a></dd></div>
+            <div><dt>Velog</dt><dd><a href="https://velog.io/@aaiss0927/posts" target="_blank" rel="noopener">velog.io/@aaiss0927&nbsp;<span class="arrow" aria-hidden="true">↗</span></a></dd></div>
+            <div><dt>solved.ac</dt><dd><a href="https://solved.ac/aaiss0927" target="_blank" rel="noopener">solved.ac/aaiss0927&nbsp;<span class="arrow" aria-hidden="true">↗</span></a></dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================================================================ Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 조현준</p>
+    </div>
+  </footer>
+
+  <script src="./script.js" defer></script>
+</body>
+</html>
