@@ -8,7 +8,7 @@
 
 | 파일 | 역할 |
 | --- | --- |
-| `index.html` | 단일 페이지 (Hero · Projects · Awards & Publication · How I Work · Experience · Education & Skills · Writing · Contact) |
+| `index.html` | 단일 페이지 (Hero · Education & Skills · How I Work · Experience · Awards · Projects · Contact) |
 | `styles.css` | 스타일. 색은 전부 `:root` 변수, 다크 모드는 `prefers-color-scheme` + `data-theme` 속성 둘 다 지원 |
 | `script.js` | 프로젝트 상세 펼침/접기, 현재 섹션 표시, 이메일 복사. JS가 꺼져 있어도 내용은 전부 보임 |
 | `assets/` | 프로필 사진, 프로젝트 썸네일, OG 이미지 |

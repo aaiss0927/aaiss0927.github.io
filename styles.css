@@ -6,8 +6,8 @@
     1. Tokens          2. Base            3. Layout          4. Header / Nav
     5. Hero            6. Section head    7. Cards & labels  8. Projects grid
     9. Project detail 10. Awards         11. How I work     12. Experience
-   13. Education      14. Writing        15. Contact/Footer 16. Utilities
-   17. Dark mode      18. Motion / Print
+   13. Education      14. Contact/Footer 15. Utilities      16. Dark mode
+   17. Motion / Print
    ================================================== */
 
 /* 1. Tokens ---------------------------------------- */
@@ -209,7 +209,8 @@ code {
 }
 
 /* Phones: brand on row one, all five links on row two — sized to fit 320px
-   (11px mono, 4px gaps), so nothing scrolls or hides. */
+   (11px mono, no letter-spacing, 4px gaps; 12px / 8px gaps from 368px), so
+   nothing scrolls, wraps or hides. */
 .site-header__inner {
   display: flex;
   flex-wrap: wrap;
@@ -278,7 +279,7 @@ code {
   padding: 0 2px;
   margin: -7px -2px;
   font: 500 11px/16px var(--mono);
-  letter-spacing: 0.02em;
+  letter-spacing: 0;
   text-transform: uppercase;
   white-space: nowrap;
   color: var(--muted);
@@ -309,7 +310,7 @@ code {
   background: var(--blue);
 }
 
-@media (min-width: 360px) {
+@media (min-width: 368px) {
   .site-nav ul {
     gap: var(--s1);
   }
@@ -712,7 +713,6 @@ code {
   flex-direction: column;
   gap: 12px;
   padding: var(--card-pad);
-  scroll-margin-top: calc(var(--header-h) + var(--s2));
   cursor: pointer;
   transition: border-color var(--t);
 }
@@ -823,7 +823,6 @@ code {
   grid-column: 1 / -1;
   padding: var(--card-pad);
   border-top-color: var(--blue);
-  scroll-margin-top: calc(var(--header-h) + var(--s2));
   animation: detail-in 220ms ease;
 }
 
@@ -1190,7 +1189,7 @@ code {
   }
 }
 
-/* 10. Awards & Publication ------------------------- */
+/* 10. Awards --------------------------------------- */
 .awards {
   margin-top: var(--s1); /* rule → first line 24px */
 }
@@ -1245,15 +1244,9 @@ code {
   line-height: 22px;
 }
 
-/* 40px-tall hit boxes: padding grows the target, negative margins cancel it. */
-.posts__more a,
+/* 40px-tall hit box: padding grows the target, negative margins cancel it. */
 .contact__links a {
   display: inline-block;
-  padding: 9px 6px;
-  margin: -9px -6px;
-}
-
-.contact__links a {
   padding: 8px 6px;
   margin: -8px -6px;
 }
@@ -1484,52 +1477,7 @@ code {
   }
 }
 
-/* 14. Writing -------------------------------------- */
-.posts {
-  margin-top: var(--s1); /* rule → first line 24px */
-}
-
-.posts > li {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2px var(--s3);
-  padding: var(--s2) 0;
-  border-bottom: 1px solid var(--border);
-}
-
-.post__date {
-  font: 400 12px/24px var(--mono);
-  color: var(--muted);
-}
-
-.post__title {
-  justify-self: start;
-  padding: 8px 6px; /* 40px hit box */
-  margin: -8px -6px;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 600;
-  color: var(--ink);
-}
-
-.post__title:hover {
-  color: var(--blue);
-}
-
-.posts__more {
-  margin-top: var(--s2);
-  font-size: 14px;
-  line-height: 22px;
-  font-weight: 500;
-}
-
-@media (min-width: 640px) {
-  .posts > li {
-    grid-template-columns: 112px minmax(0, 1fr);
-  }
-}
-
-/* 15. Contact / Footer ----------------------------- */
+/* 14. Contact / Footer ----------------------------- */
 .contact__grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -1604,7 +1552,7 @@ code {
   color: var(--muted);
 }
 
-/* 16. Utilities ------------------------------------ */
+/* 15. Utilities ------------------------------------ */
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -1617,7 +1565,7 @@ code {
   border: 0;
 }
 
-/* 17. Dark mode ------------------------------------ */
+/* 16. Dark mode ------------------------------------ */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     color-scheme: dark;
@@ -1656,7 +1604,7 @@ code {
   --photo-filter: brightness(0.82) contrast(0.95);
 }
 
-/* 18. Motion / Print ------------------------------- */
+/* 17. Motion / Print ------------------------------- */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

@@ -58,7 +58,7 @@
     }
   }
   </script>
-  <noscript><style>.project__detail[hidden]{display:block}.project__toggle,.detail__close{display:none}.project{cursor:default}</style></noscript>
+  <noscript><style>.project__detail[hidden]{display:block}.project__toggle,.detail__close,.copy-row{display:none}.project{cursor:default}</style></noscript>
 </head>
 <body id="top">
   <a class="skip-link" href="#main">본문으로 건너뛰기</a>
@@ -76,10 +76,10 @@
       </a>
       <nav class="site-nav" aria-label="섹션 이동">
         <ul>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#awards">Awards</a></li>
+          <li><a href="#education">Education</a></li>
           <li><a href="#experience">Experience</a></li>
-          <li><a href="#writing">Writing</a></li>
+          <li><a href="#awards">Awards</a></li>
+          <li><a href="#projects">Projects</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
@@ -121,12 +121,173 @@
       </div>
     </section>
 
-    <!-- ============================================================== 01 Projects -->
+    <!-- ============================================================== 01 Education & Skills -->
+    <section class="section" id="education" aria-labelledby="education-title">
+      <div class="container">
+        <div class="sec-head">
+          <h2 class="sec-title" id="education-title">Education &amp; Skills</h2>
+          <span class="sec-num" aria-hidden="true">01 / 06</span>
+        </div>
+        <div class="edu-grid">
+          <section class="block" aria-labelledby="edu-block-title">
+            <h3 class="block__title label" id="edu-block-title">Education</h3>
+            <div class="edu">
+              <p class="edu__school">인하대학교 컴퓨터공학과 학사</p>
+              <p class="edu__when">2022.03 – 2026.02</p>
+              <p class="edu__gpa">Total GPA 4.26 / 4.5 · Major GPA 4.24 / 4.5</p>
+            </div>
+            <dl class="edu-certs">
+              <div><dt>자격 / 어학</dt><dd>ADsP (2025.06) · TOEIC Speaking IH 140 (2025.06)</dd></div>
+            </dl>
+          </section>
+          <section class="block" aria-labelledby="skills-title">
+            <h3 class="block__title label" id="skills-title">Skills</h3>
+            <dl class="skills">
+              <div><dt>Language</dt><dd>Python, SQL</dd></div>
+              <div><dt>ML / DL</dt><dd>PyTorch, Hugging Face, Transformers, scikit-learn</dd></div>
+              <div><dt>LLM</dt><dd>LLM Agents, RAG, MCP</dd></div>
+              <div><dt>Backend / Data</dt><dd>FastAPI, Apache Airflow</dd></div>
+              <div><dt>Infra / Tools</dt><dd>Linux, git, Slack, Jira, Claude Code</dd></div>
+            </dl>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================== 02 How I Work -->
+    <section class="section" id="how-i-work" aria-labelledby="how-title">
+      <div class="container">
+        <div class="sec-head">
+          <h2 class="sec-title" id="how-title">How I Work</h2>
+          <span class="sec-num" aria-hidden="true">02 / 06</span>
+        </div>
+        <ol class="principles" role="list">
+          <li class="card principle">
+            <span class="label">01</span>
+            <h3>검증을 먼저 설계</h3>
+            <p>생성보다 판정을 먼저 만듭니다. VeriMCP의 TrustScore, Aingo의 문항 검수 게이트, Airflow의 키 집합 diff — 모두 "맞는지 어떻게 아는가"를 먼저 정한 뒤 만든 것입니다.</p>
+          </li>
+          <li class="card principle">
+            <span class="label">02</span>
+            <h3>탐지는 AI, 판정은 사람</h3>
+            <p>에이전트에 실행 권한을 그대로 주지 않습니다. Loremaster는 위키 정제, 충돌 탐지, 이슈 제안까지만 자동이고, Jira 쓰기는 Slack 승인 게이트를 지나야 합니다.</p>
+          </li>
+          <li class="card principle">
+            <span class="label">03</span>
+            <h3>성과로 증명</h3>
+            <p>스토어에 올라간 앱, 원본 저장소에 병합된 PR, 로그에 남은 347회의 자동 커밋. 이 포트폴리오의 숫자는 모두 Jira, git, Slack, App Store에서 확인할 수 있는 값입니다.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============================================================== 03 Experience -->
+    <section class="section" id="experience" aria-labelledby="experience-title">
+      <div class="container">
+        <div class="sec-head">
+          <h2 class="sec-title" id="experience-title">Experience</h2>
+          <span class="sec-num" aria-hidden="true">03 / 06</span>
+        </div>
+        <ol class="timeline" role="list">
+          <li class="tl-item">
+            <span class="tl-date">2026.06 – 현재</span>
+            <div class="tl-body">
+              <h3 class="tl-title">AI·SW마에스트로 17기 연수생</h3>
+              <p class="tl-org">과학기술정보통신부 주관, 창업 트랙</p>
+              <p class="tl-desc">AI 활용법 학습 서비스 'Aingo'를 iOS App Store에 출시. AI 활용 역량 정의 및 평가 체계를 설계하고 검증.</p>
+            </div>
+          </li>
+          <li class="tl-item">
+            <span class="tl-date">2026.01 – 2026.02</span>
+            <div class="tl-body">
+              <h3 class="tl-title">LG Aimers 8기 교육생</h3>
+              <p class="tl-org">LG AI연구원</p>
+              <p class="tl-desc">LLM 학계 트렌드 교육 이수. 리더보드 실습에서 AWQ 양자화로 EXAONE-4.0의 GSM8K, KMMLU 벤치마크 성능을 유지하며 모델 크기 50% 감축.</p>
+            </div>
+          </li>
+          <li class="tl-item">
+            <span class="tl-date">2025.06 – 2026.01</span>
+            <div class="tl-body">
+              <h3 class="tl-title">인하대학교 지식기반 데이터 분석 연구실 학부연구생</h3>
+              <p class="tl-desc">K-MMSE 기반 간이 치매 진단 및 클리닉 챗봇 연구, KSC2025 논문 제1저자.</p>
+            </div>
+          </li>
+          <li class="tl-item">
+            <span class="tl-date">2024.08 – 2025.08</span>
+            <div class="tl-body">
+              <h3 class="tl-title">인하대학교 인공지능학회 부회장</h3>
+              <p class="tl-desc">학회 운영 총괄. 약 30명 규모를 약 100명으로 확장, 체계적인 스터디·프로젝트 지원으로 2025년 학회 수상 실적 11건.</p>
+            </div>
+          </li>
+          <li class="tl-item">
+            <span class="tl-date">2024.08 – 2025.02</span>
+            <div class="tl-body">
+              <h3 class="tl-title">네이버 부스트캠프 AI Tech 7기 교육생 (CV 트랙)</h3>
+              <p class="tl-org">네이버커넥트, 960시간</p>
+              <p class="tl-desc">Image Classification, Object Detection, Segmentation 프로젝트를 리더보드 형식으로 수행.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============================================================== 04 Awards -->
+    <section class="section" id="awards" aria-labelledby="awards-title">
+      <div class="container">
+        <div class="sec-head">
+          <h2 class="sec-title" id="awards-title">Awards</h2>
+          <span class="sec-num" aria-hidden="true">04 / 06</span>
+        </div>
+        <ol class="awards" role="list">
+          <li class="award">
+            <span class="award__date">2025.12</span>
+            <strong class="award__name">대상</strong>
+            <div class="award__body">
+              <p class="award__event">카카오 × 한국정보과학회 AI 에이전트 경진대회</p>
+              <p class="award__desc">
+                <a class="award__ref" href="#project-verimcp">VeriMCP <span class="arrow" aria-hidden="true">→</span> Project 01</a>
+                <a class="award__link" href="https://v.daum.net/v/20251218154103272" target="_blank" rel="noopener">기사 <span class="arrow" aria-hidden="true">↗</span></a>
+              </p>
+            </div>
+          </li>
+          <li class="award">
+            <span class="award__date">2025.08</span>
+            <strong class="award__name">우수상 <small>7위 / 271팀</small></strong>
+            <div class="award__body">
+              <p class="award__event">2025 SW중심대학 디지털 경진대회 AI 부문 <span class="award__host">(주최 과학기술정보통신부, 주관 소프트웨어중심대학협의회)</span></p>
+              <p class="award__desc">AI 생성 텍스트 판별: LLaMA·Gemma 데이터 증강으로 데이터셋 1,060% 확장(97,172개 → 1,125,652개), 한국어 DeBERTa 앙상블 + 슬라이딩 윈도우로 ROC-AUC 0.924
+                <a class="award__link" href="https://github.com/aaiss0927/SW-2025" target="_blank" rel="noopener">GitHub <span class="arrow" aria-hidden="true">↗</span></a>
+                <a class="award__link" href="https://www.hankyung.com/article/202508185337h" target="_blank" rel="noopener">기사 <span class="arrow" aria-hidden="true">↗</span></a>
+              </p>
+            </div>
+          </li>
+          <li class="award">
+            <span class="award__date">2025.08</span>
+            <strong class="award__name">우수상 <small>3위 / 27팀</small></strong>
+            <div class="award__body">
+              <p class="award__event">2025 인하 인공지능 챌린지 <span class="award__host">(주최 인하대학교)</span></p>
+              <p class="award__desc">언어 정보 기반 이미지 색채화: L-CAD 제로샷 + SAM 2.1 멀티 가이던스 앙상블, 평가 산식 0.672
+                <a class="award__link" href="https://github.com/aaiss0927/IC-2025" target="_blank" rel="noopener">GitHub <span class="arrow" aria-hidden="true">↗</span></a>
+              </p>
+            </div>
+          </li>
+          <li class="award">
+            <span class="award__date">2023.04</span>
+            <strong class="award__name">성적 우수상</strong>
+            <div class="award__body">
+              <p class="award__event">인하대학교 소프트웨어융합대학</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============================================================== 05 Projects -->
     <section class="section" id="projects" aria-labelledby="projects-title">
       <div class="container">
         <div class="sec-head">
           <h2 class="sec-title" id="projects-title">Projects</h2>
-          <span class="sec-num" aria-hidden="true">01 / 07</span>
+          <span class="sec-num" aria-hidden="true">05 / 06</span>
         </div>
 
         <div class="project-grid">
@@ -479,206 +640,12 @@
       </div>
     </section>
 
-    <!-- ============================================================== 02 Awards & Publication -->
-    <section class="section" id="awards" aria-labelledby="awards-title">
-      <div class="container">
-        <div class="sec-head">
-          <h2 class="sec-title" id="awards-title">Awards &amp; Publication</h2>
-          <span class="sec-num" aria-hidden="true">02 / 07</span>
-        </div>
-        <ol class="awards" role="list">
-          <li class="award">
-            <span class="award__date">2025.12</span>
-            <strong class="award__name">대상</strong>
-            <div class="award__body">
-              <p class="award__event">카카오 × 한국정보과학회 AI 에이전트 경진대회</p>
-              <p class="award__desc">
-                <a class="award__ref" href="#project-verimcp">VeriMCP <span class="arrow" aria-hidden="true">→</span> Project 01</a>
-                <a class="award__link" href="https://v.daum.net/v/20251218154103272" target="_blank" rel="noopener">기사 <span class="arrow" aria-hidden="true">↗</span></a>
-              </p>
-            </div>
-          </li>
-          <li class="award">
-            <span class="award__date">2025.12</span>
-            <strong class="award__name">논문 <small>제1저자</small></strong>
-            <div class="award__body">
-              <p class="award__event">KSC 2025 <span class="award__host">(한국정보과학회 한국소프트웨어종합학술대회)</span></p>
-              <p class="award__desc"><strong>Hyeonjun Jo</strong>, Seokho Ahn, Young-Duk Seo, "Development of K-MMSE-based Simple Dementia Diagnosis and Clinic Chatbot" — K-MMSE 하위 항목 기반 치매 선별 로지스틱 회귀 모델</p>
-            </div>
-          </li>
-          <li class="award">
-            <span class="award__date">2025.08</span>
-            <strong class="award__name">우수상 <small>7위 / 271팀</small></strong>
-            <div class="award__body">
-              <p class="award__event">2025 SW중심대학 디지털 경진대회 AI 부문 <span class="award__host">(주최 과학기술정보통신부, 주관 소프트웨어중심대학협의회)</span></p>
-              <p class="award__desc">AI 생성 텍스트 판별: LLaMA·Gemma 데이터 증강으로 데이터셋 1,060% 확장(97,172개 → 1,125,652개), 한국어 DeBERTa 앙상블 + 슬라이딩 윈도우로 ROC-AUC 0.924
-                <a class="award__link" href="https://github.com/aaiss0927/SW-2025" target="_blank" rel="noopener">GitHub <span class="arrow" aria-hidden="true">↗</span></a>
-                <a class="award__link" href="https://www.hankyung.com/article/202508185337h" target="_blank" rel="noopener">기사 <span class="arrow" aria-hidden="true">↗</span></a>
-              </p>
-            </div>
-          </li>
-          <li class="award">
-            <span class="award__date">2025.08</span>
-            <strong class="award__name">우수상 <small>3위 / 27팀</small></strong>
-            <div class="award__body">
-              <p class="award__event">2025 인하 인공지능 챌린지 <span class="award__host">(주최 인하대학교)</span></p>
-              <p class="award__desc">언어 정보 기반 이미지 색채화: L-CAD 제로샷 + SAM 2.1 멀티 가이던스 앙상블, 평가 산식 0.672
-                <a class="award__link" href="https://github.com/aaiss0927/IC-2025" target="_blank" rel="noopener">GitHub <span class="arrow" aria-hidden="true">↗</span></a>
-              </p>
-            </div>
-          </li>
-          <li class="award">
-            <span class="award__date">2023.04</span>
-            <strong class="award__name">성적 우수상</strong>
-            <div class="award__body">
-              <p class="award__event">인하대학교 소프트웨어융합대학</p>
-            </div>
-          </li>
-        </ol>
-      </div>
-    </section>
-
-    <!-- ============================================================== 03 How I Work -->
-    <section class="section" id="how-i-work" aria-labelledby="how-title">
-      <div class="container">
-        <div class="sec-head">
-          <h2 class="sec-title" id="how-title">How I Work</h2>
-          <span class="sec-num" aria-hidden="true">03 / 07</span>
-        </div>
-        <ol class="principles" role="list">
-          <li class="card principle">
-            <span class="label">01</span>
-            <h3>검증을 먼저 설계</h3>
-            <p>생성보다 판정을 먼저 만듭니다. VeriMCP의 TrustScore, Aingo의 문항 검수 게이트, Airflow의 키 집합 diff — 모두 "맞는지 어떻게 아는가"를 먼저 정한 뒤 만든 것입니다.</p>
-          </li>
-          <li class="card principle">
-            <span class="label">02</span>
-            <h3>탐지는 AI, 판정은 사람</h3>
-            <p>에이전트에 실행 권한을 그대로 주지 않습니다. Loremaster는 위키 정제, 충돌 탐지, 이슈 제안까지만 자동이고, Jira 쓰기는 Slack 승인 게이트를 지나야 합니다.</p>
-          </li>
-          <li class="card principle">
-            <span class="label">03</span>
-            <h3>성과로 증명</h3>
-            <p>스토어에 올라간 앱, 원본 저장소에 병합된 PR, 로그에 남은 347회의 자동 커밋. 이 포트폴리오의 숫자는 모두 Jira, git, Slack, App Store에서 확인할 수 있는 값입니다.</p>
-          </li>
-        </ol>
-      </div>
-    </section>
-
-    <!-- ============================================================== 04 Experience -->
-    <section class="section" id="experience" aria-labelledby="experience-title">
-      <div class="container">
-        <div class="sec-head">
-          <h2 class="sec-title" id="experience-title">Experience</h2>
-          <span class="sec-num" aria-hidden="true">04 / 07</span>
-        </div>
-        <ol class="timeline" role="list">
-          <li class="tl-item">
-            <span class="tl-date">2026.06 – 현재</span>
-            <div class="tl-body">
-              <h3 class="tl-title">AI·SW마에스트로 17기 연수생</h3>
-              <p class="tl-org">과학기술정보통신부 주관, 창업 트랙</p>
-              <p class="tl-desc">AI 활용법 학습 서비스 'Aingo'를 iOS App Store에 출시. AI 활용 역량 정의 및 평가 체계를 설계하고 검증.</p>
-            </div>
-          </li>
-          <li class="tl-item">
-            <span class="tl-date">2026.01 – 2026.02</span>
-            <div class="tl-body">
-              <h3 class="tl-title">LG Aimers 8기 교육생</h3>
-              <p class="tl-org">LG AI연구원</p>
-              <p class="tl-desc">LLM 학계 트렌드 교육 이수. 리더보드 실습에서 AWQ 양자화로 EXAONE-4.0의 GSM8K, KMMLU 벤치마크 성능을 유지하며 모델 크기 50% 감축.</p>
-            </div>
-          </li>
-          <li class="tl-item">
-            <span class="tl-date">2025.06 – 2026.01</span>
-            <div class="tl-body">
-              <h3 class="tl-title">인하대학교 지식기반 데이터 분석 연구실 학부연구생</h3>
-              <p class="tl-desc">K-MMSE 기반 간이 치매 진단 및 클리닉 챗봇 연구, KSC2025 논문 제1저자.</p>
-            </div>
-          </li>
-          <li class="tl-item">
-            <span class="tl-date">2024.08 – 2025.08</span>
-            <div class="tl-body">
-              <h3 class="tl-title">인하대학교 인공지능학회 부회장</h3>
-              <p class="tl-desc">학회 운영 총괄. 약 30명 규모를 약 100명으로 확장, 체계적인 스터디·프로젝트 지원으로 2025년 학회 수상 실적 11건.</p>
-            </div>
-          </li>
-          <li class="tl-item">
-            <span class="tl-date">2024.08 – 2025.02</span>
-            <div class="tl-body">
-              <h3 class="tl-title">네이버 부스트캠프 AI Tech 7기 교육생 (CV 트랙)</h3>
-              <p class="tl-org">네이버커넥트, 960시간</p>
-              <p class="tl-desc">Image Classification, Object Detection, Segmentation 프로젝트를 리더보드 형식으로 수행.</p>
-            </div>
-          </li>
-        </ol>
-      </div>
-    </section>
-
-    <!-- ============================================================== 05 Education & Skills -->
-    <section class="section" id="education" aria-labelledby="education-title">
-      <div class="container">
-        <div class="sec-head">
-          <h2 class="sec-title" id="education-title">Education &amp; Skills</h2>
-          <span class="sec-num" aria-hidden="true">05 / 07</span>
-        </div>
-        <div class="edu-grid">
-          <section class="block" aria-labelledby="edu-block-title">
-            <h3 class="block__title label" id="edu-block-title">Education</h3>
-            <div class="edu">
-              <p class="edu__school">인하대학교 컴퓨터공학과 학사</p>
-              <p class="edu__when">2022.03 – 2026.02</p>
-              <p class="edu__gpa">Total GPA 4.26 / 4.5 · Major GPA 4.24 / 4.5</p>
-            </div>
-            <dl class="edu-certs">
-              <div><dt>자격 / 어학</dt><dd>ADsP (2025.06) · TOEIC Speaking IH 140 (2025.06)</dd></div>
-            </dl>
-          </section>
-          <section class="block" aria-labelledby="skills-title">
-            <h3 class="block__title label" id="skills-title">Skills</h3>
-            <dl class="skills">
-              <div><dt>Language</dt><dd>Python, SQL</dd></div>
-              <div><dt>ML / DL</dt><dd>PyTorch, Hugging Face, Transformers, scikit-learn</dd></div>
-              <div><dt>LLM</dt><dd>LLM Agents, RAG, MCP</dd></div>
-              <div><dt>Backend / Data</dt><dd>FastAPI, Apache Airflow</dd></div>
-              <div><dt>Infra / Tools</dt><dd>Linux, git, Slack, Jira, Claude Code</dd></div>
-            </dl>
-          </section>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================== 06 Writing -->
-    <section class="section" id="writing" aria-labelledby="writing-title">
-      <div class="container">
-        <div class="sec-head">
-          <h2 class="sec-title" id="writing-title">Writing</h2>
-          <span class="sec-num" aria-hidden="true">06 / 07</span>
-        </div>
-        <ul class="posts" role="list">
-          <li>
-            <span class="post__date">2026.03.25</span>
-            <a class="post__title" href="https://velog.io/@aaiss0927/82iwkdj1" target="_blank" rel="noopener">AI·SW마에스트로 17기 합격 후기 <span class="arrow" aria-hidden="true">↗</span></a>
-          </li>
-          <li>
-            <span class="post__date">2025.11.05</span>
-            <a class="post__title" href="https://velog.io/@aaiss0927/Graph-Search" target="_blank" rel="noopener">Graph Search <span class="arrow" aria-hidden="true">↗</span></a>
-          </li>
-          <li>
-            <span class="post__date">2025.08.13</span>
-            <a class="post__title" href="https://velog.io/@aaiss0927/Hash-Table" target="_blank" rel="noopener">Hash Table <span class="arrow" aria-hidden="true">↗</span></a>
-          </li>
-        </ul>
-        <p class="posts__more"><a href="https://velog.io/@aaiss0927/posts" target="_blank" rel="noopener">전체 보기 <span class="arrow" aria-hidden="true">↗</span></a></p>
-      </div>
-    </section>
-
-    <!-- ============================================================== 07 Contact -->
+    <!-- ============================================================== 06 Contact -->
     <section class="section" id="contact" aria-labelledby="contact-title">
       <div class="container">
         <div class="sec-head">
           <h2 class="sec-title" id="contact-title">Contact</h2>
-          <span class="sec-num" aria-hidden="true">07 / 07</span>
+          <span class="sec-num" aria-hidden="true">06 / 06</span>
         </div>
         <div class="contact__grid">
           <div>
